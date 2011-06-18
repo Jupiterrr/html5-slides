@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>Presentation</title>
+
+    <meta charset='utf-8'>
+    <script
+      src='slides.js'></script>
+  </head>
+  
+  <style>
+    .form_el {
+      margin-bottom: 30px;
+    }
+    .form_el pre {
+      display:inline-block; padding: 5px; margin:0;
+    }
+    .form_el.sm h4 {
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 0em;
+      margin-top: 1em;
+    }
+    .form_el input {
+      font-size: 0.6em;
+    }
+    
+    [required] {
+        border-color: #88a;
+        -webkit-box-shadow: 0 0 3px rgba(0, 0, 255, .5);
+    }
+    :invalid {
+        border-color: #e88;
+        -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+    }
+    
+    #round {
+        -webkit-border-radius: 10px;
+        background: red;
+        position: relative;
+        height: 100px;
+        width: 300px;
+    }
+    
+    ol ul {
+      margin-top: 0 !important;
+    }
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+      
+      <!-- Start   -->
+      <article>
+        <h1>
+          High five für HTML5 
+        </h1>
+        <p>
+          Carsten Griesheimer
+          <br>
+          Juni, 2011
+        </p>
+      </article>
+      
+      <article class="biglogo">
+      </article>
+      
+      <!-- Geschichte -->
+      <article>
+        <h3>
+          Geschichte
+        </h3>
+        <ul>
+          <li>1991 HTML</li>                       
+          <li>1994 HTML 2</li>                      
+          <li>1996 CSS 1 + JavaScript</li>          
+          <li>1997 HTML 4</li>                      
+          <li>1998 CSS 2</li>                       
+          <li>2000 XHTML 1</li>
+        </ul>
+        <div class="build">
+          <ul>
+            <li><span class="blue">2002</span> Tableless Web Design</li>        
+            <li><span class="blue">2005</span> AJAX</li>                        
+            <li><span class="blue">2009</span> HTML 5</li>                      
+          </ul>
+        </div>
+      </article>
+      
+      <article class="fill">
+        <img src="images/Motoryacht zu verkaufen, Wolfgang Ingenfeld.png"></iframe>
+      </article>
+      
+      <article class="fill">
+        <img src="images/Joyent Node.png"></iframe>
+      </article>
+      
+      <!-- Überblick -->
+      <article>
+        <h3>Überblick</h3>
+        <ol>
+          <li>Semantik</li>
+          <li>CSS3</li>
+          <li>Javascript</li>
+            <ul>
+              <li>Offline Speicher</li>
+              <li>Geräte Zugriff</li>
+              <li>Real-Time Komunikation</li>
+              <li>Multimedia</li>
+              <li>Performance</li>
+            </ul>
+          <li>Einsatz</li>
+          <li>Q&amp;A</li>
+        </ol>
+      </article>
+      
+      <!-- Änderungen -->
+      <article>
+        <h3>Änderungen</h3>
+        <br /><br />
+        <div class="build">
+          <div style="float:left; width:40%; margin-right:10%;">
+            <h4>Alt</h4>
+            <p>
+              <s>basefont</s>, 
+              <s>big</s>, 
+              <s>center</s>, 
+              <s>font</s>, 
+              <s>strike</s>, 
+              <s>tt</s>, 
+              <s>frame</s>, 
+              <s>frameset</s>, 
+              <s>noframes</s>, 
+              <s>acronym</s>, 
+              <s>applet</s>, 
+              <s>isindex</s>, 
+              <s>dir</s>
+            </p>
+          </div>
+          <div style="float:left; width:40%;">
+            <h4>Neu</h4>
+            <p>
+              header, section, article, nav, aside, footer, figure, video, audio, canvas
+            </p>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Struktur -->
+      <article>
+        <h3>Struktur</h3>
+        <p>
+          Neue Tags vereinfachen die Struktur einer Seite und helfen dabei oft verwendete       &lt;div id=&quot;&hellip;&quot;&gt;-Blöcke zu vermeiden.</p>
+        <br />
+        <small>
+          header, section, article, nav, aside, footer, figure
+        </small>
+        <br />
+        <p>
+          <img src="images/structure-html5.gif">
+        </p>
+      </article>  
+      
+      <!-- Imput-Elemente -->
+      <article class="smaller">
+        <h3>Imput-Elemente</h3>
+        <div class="build">
+          <div class="form_el">
+            <h4>Require</h4>
+            <pre>&lt;input type=&quot;text&quot; required /&gt;</pre>
+            <input type="text" required />
+          </div>
+          
+          <div class="form_el">
+            <h4>Platzhalter</h4>
+            <pre>&lt;input type=&quot;text&quot; placeholder=&quot;beispiel&quot; /&gt;</pre>
+            <input type="text" placeholder="beispiel" />
+          </div>
+          
+          <div class="form_el">
+             <h4>Validierung:</h4>
+             <pre>&lt;input type=&quot;tel&quot;  placeholder=&quot;(555) 555-5555&quot;
+                        pattern=&quot;^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$&quot; /&gt;</pre>
+             <input type="tel"  placeholder="(555) 555-5555"
+                      pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" />
+          </div>
+        </div>
+        
+      </article>
+      
+      <!-- Imput-Elemente - Neue Typen -->
+      <article class="smaller">
+        <h3>Imput-Elemente - Neue Typen</h3>
+        <br />
+        <div class="build">
+          <div class="form_el sm">
+            <h4>Email:</h4>
+            <pre>&lt;input type=&quot;email&quot; value=&quot;some@email.com&quot; /&gt;</pre>
+            <input type="email" value="some@email.com" />
+          </div>
+        
+          <div class="form_el sm">
+            <h4>Datum:</h4>
+            <pre>&lt;input type=&quot;date&quot; min=&quot;2010-08-14&quot; max=&quot;2011-08-14&quot; value=&quot;2010-08-14&quot;/&gt;</pre>
+            <input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"/>
+            <br />
+          </div>
+          
+          <div class="form_el sm">
+            <h4>Range:</h4>
+            <pre>&lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;50&quot; value=&quot;10&quot; /&gt;</pre>
+            <input type="range" min="0" max="50" value="10" />
+            <br />
+          </div>
+          
+          <div class="form_el sm">
+            <h4>Suche:</h4>
+            <pre>&lt;input type=&quot;search&quot; results=&quot;10&quot; placeholder=&quot;Search...&quot; /&gt;</pre>
+            <input type="search" results="10" placeholder="Search..." />
+          </div>
+          
+        </div>
+        
+      </article>
+      
+      <!-- Smartphones -->
+      <article>
+        <br />
+        <p>
+          <img class='centered' style='height: 500px' src='images/html5 input type in iphone.png'>
+        </p>
+      </article>
+      
+      <article>
+        <h3>Datenauszeichnung</h3>
+        <ul>
+          <li>Microdata</li>
+          <li>Micro Formate</li>
+          <li>RDFa</li>
+          <li>ARIA</li>
+        </ul>
+      </article>  
+      
+      <!-- Multimedia -->
+      <article>
+        <h3>Multimedia</h3>
+        <p>
+          <h4>Video</h4>
+          <video src="images/videoplayback.webm" controls></video>
+        </p>
+        <p>
+          <h4>Audio</h4>
+          <audio src="images/Artist of the Year - Sexy Me, Sexy You.mp3" controls></audio>
+        </p>
+      </article>
+      
+      <article>
+        <h1>CSS3<br></h1>
+        
+        <p>
+          Schatten, Rundungen, Animationen, ...
+        </p>
+
+      </article>
+      
+      <article class="nobackground">
+        <h3>Selectoren</h3>
+        <pre>.row:nth-child(even) { ... }
+.row:nth-child(odd) { ... }
+.row:nth-child(3n+1) { ... }
+
+:not(.class) { ... }       
+input[type="text"] { ... }
+h2:first-child { ... }
+div.text > div { ... }    
+        </pre>
+      </article>
+            
+      <article>
+        <h3>CSS3 - Border-Radius</h3>
+        <pre>.class {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}</pre>
+      <div id="round"></div>
+      </article>
+            
+      <article>
+        <h2><a href="http://www.css3maker.com/" target="_blank">css3maker.com</a></h2>
+      </article>
+
+
+      
+      <article>
+        <h1>Javascript<br></h1>
+        
+        <p>
+          Native Drag and Drop, localStorage, WebGL, ...
+        </p>
+
+      </article>
+      
+      <article>
+        <h3>Neue Dom Selectoren</h3>
+        <div class="build">
+          <div>
+            <h4>Mit Class:</h4>
+            <pre>document.getElementsByClassName('section');</pre>
+          </div>
+          <div>
+            <h4>Mit CSS-Seletor:</h4>
+            <pre>document.querySelectorAll("ul li:nth-child(odd)");</pre>
+          </div>
+      </article>
+      
+      <article class="smaller">
+        <h3>data-* Attribute</h3>
+        <pre>&lt;div id=&quot;out&quot; data-id=&quot;good&quot; data-name=&quot;joe&quot; data-screen-name=&quot;user1&quot;&gt;&lt;/div&gt;</pre>
+      
+        <pre>// Add new data attributes via JS.
+var el = document.querySelector('#out');
+el.setAttribute('data-foo', 'bar');
+
+var html = [];
+for (var key in el.dataset) {
+  html.push(key, ': ', el.dataset[key], '<br>');
+}
+
+el.innerHTML = html.join('');</pre>
+      <pre>id: good
+name: joe
+screenName: user1
+foo: bar</pre>
+      </article>
+      
+      <article>
+        <h3>Element.classList</h3>
+        <pre>&lt;div id=&quot;main&quot; class=&quot;shadow rounded&quot;&gt;&lt;/div&gt;</pre>
+        
+        <pre>var el = document.querySelector('#main').classList;
+    el.add('highlight');
+    el.remove('shadow');
+    el.toggle('highlight');</pre>
+        
+        
+        <pre>console.log(el.contains('highlight')); // false
+console.log(el.contains('shadow')); // false
+console.log(el.classList.toString() == el.className); // true</pre>
+Output:
+
+        <pre>&lt;div id=&quot;main&quot; class=&quot;rounded&quot;&gt;&lt;/div&gt;</pre>
+      </article>
+      
+      <article class="nobackground">
+        <h3>Contenteditable + LocalStorage</h3>
+        <iframe src='http://html5demos.com/contenteditable'></iframe>
+      </article>
+      
+      <article class="nobackground">
+        <h3>Canvas</h3>
+        <iframe src='http://html5demos.com/canvas-grad'></iframe>
+      </article>
+      
+      <article class="nobackground">
+        <h3>Drag and Drop</h3>
+        <iframe src='http://html5demos.com/drag'></iframe>
+      </article>
+      
+      <article class="nobackground">
+        <h3>Drag and Drop mit Dateien</h3>
+        <iframe src='http://html5demos.com/file-api'></iframe>
+      </article>
+      
+      <article class="nobackground fill">
+        <iframe src='http://slides.html5rocks.com/#web-workers'></iframe>
+      </article>
+      
+      <article class="nobackground">
+        <h3>Geolocation</h3>
+        <iframe src='http://html5demos.com/geo'></iframe>
+      </article>
+      
+      <article class="nobackground fill">
+        <iframe src='http://slides.html5rocks.com/#canvas-3d'></iframe>
+      </article>
+      
+      <article class="nobackground">
+        <h3>Websocket</h3>
+        <iframe src='http://html5demos.com/web-socket'></iframe>
+      </article>
+      
+      <article>
+        <h1>Schön und gut. <br />Und jetzt?<br></h1>
+      </article>
+      
+      <article>
+        <h2>&lt;!DOCTYPE html&gt;</h2>
+      </article>  
+      
+      <article>
+        <h3>Auf Los gehts Los. Los!</h3>
+        <ul>
+          <li>Google Frame - macht IE Beine</li>
+          <li>Modernizr - prüft welche Funktionen vorhanden sind</li>
+          <li>html5demos.com</li>
+          <li>html5rocks.com</li>
+          <li>http://de.html5boilerplate.com/</li>
+        </ul>
+      </article>
+      
+      
+      <article>
+        <h3>
+          Q&amp;A
+        </h3>
+        
+        <img src="images/A Preview of HTML 5.jpeg" style="float:right;">
+      </article>
+      
+      <article>
+        <h1>
+          Auf Wiedersehn.
+        </h1>
+        
+      </article>
+      
+    </section>
+
+  </body>
+</html>
